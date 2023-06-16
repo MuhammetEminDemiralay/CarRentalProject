@@ -12,5 +12,8 @@ namespace Business.Constants
         public static string CarListed = "Arabalar listelendi";
         public static string ColorListed = "Renkeler listelendi";
         public static string CreditCardListed = "Kredi kartları listelendi";
+        public static string CustomerListed = "Müşteriler listelendi";
+        public static string PaymentListed = "Ödemeler listelendi";
+        public static string RentalListed = "Kiralamalar listelendi";
     }
 }
