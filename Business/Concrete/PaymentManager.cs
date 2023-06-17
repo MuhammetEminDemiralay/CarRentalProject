@@ -22,17 +22,19 @@ namespace Business.Concrete
 
         public IResult Add(Payment payment)
         {
-            throw new NotImplementedException();
+            _paymentDal.Add(payment);
+            return new SuccessResult(Messages.PaymentAdd);
         }
 
         public IResult Delete(Payment payment)
         {
-            throw new NotImplementedException();
+            _paymentDal.Delete(payment);
+            return new SuccessResult(Messages.PaymentDelete);
         }
 
-        public IDataResult<Payment> Get(int payment)
+        public IDataResult<Payment> Get(int id)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Payment>(_paymentDal.Get(p => p.Id == id), Messages.PaymentGet);
         }
 
         public IDataResult<List<Payment>> GetAll()
@@ -42,7 +44,8 @@ namespace Business.Concrete
 
         public IResult Update(Payment payment)
         {
-            throw new NotImplementedException();
+           _paymentDal.Update(payment);
+            return new SuccessResult(Messages.PaymentUpdate);
         }
     }
 }

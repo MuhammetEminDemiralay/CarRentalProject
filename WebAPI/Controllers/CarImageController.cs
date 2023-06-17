@@ -7,32 +7,30 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BrandController : ControllerBase
+    public class CarImageController : ControllerBase
     {
-        IBrandService _brandService;
-        public BrandController(IBrandService brandService)
+        ICarImageService _carImageService;
+        public CarImageController(ICarImageService carImageService)
         {
-            _brandService = brandService;
+            _carImageService = carImageService;
         }
 
-
         [HttpGet("getall")]
-        public IActionResult GetAll()
+        public IActionResult GeatAll()
         {
-            var result = _brandService.GetAll();
-            if (result.Success)
+            var result = _carImageService.GetAll();
+            if(result.Success)
             {
                 return Ok(result);
             }
 
             return BadRequest();
         }
-
 
         [HttpGet("get")]
         public IActionResult Get(int id)
         {
-            var result = _brandService.Get(id);
+            var result = _carImageService.Get(id);
             if(result.Success)
             {
                 return Ok(result);
@@ -41,12 +39,11 @@ namespace WebAPI.Controllers
             return BadRequest();
         }
 
-
         [HttpPost("add")]
-        public IActionResult Add(Brand brand)
+        public IActionResult Add(CarImage carImage)
         {
-            var result = _brandService.Add(brand);
-            if(result.Success)
+            var result = _carImageService.Add(carImage);
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -56,9 +53,9 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("update")]
-        public IActionResult Update(Brand brand)
+        public IActionResult Update(CarImage carImage)
         {
-            var result = _brandService.Update(brand);
+            var result = _carImageService.Update(carImage);
             if (result.Success)
             {
                 return Ok(result);
@@ -67,21 +64,17 @@ namespace WebAPI.Controllers
             return BadRequest();
         }
 
-
         [HttpPost("delete")]
-        public IActionResult Delete(Brand brand)
+        public IActionResult Delete(CarImage carImage)
         {
-            var result = _brandService.Delete(brand);
-            if(result.Success)
+            var result = _carImageService.Delete(carImage);
+            if (result.Success)
             {
                 return Ok(result);
             }
 
             return BadRequest();
         }
-
-
-
 
 
     }

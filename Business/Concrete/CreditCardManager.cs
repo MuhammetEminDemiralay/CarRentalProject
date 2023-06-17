@@ -21,17 +21,19 @@ namespace Business.Concrete
 
         public IResult Add(CreditCard creditCard)
         {
-            throw new NotImplementedException();
+            _creditCardDal.Add(creditCard);
+            return new SuccessResult(Messages.CreditCardAdd);
         }
 
         public IResult Delete(CreditCard creditCard)
         {
-            throw new NotImplementedException();
+            _creditCardDal.Delete(creditCard);
+            return new SuccessResult(Messages.CreditCardDelete);
         }
 
         public IDataResult<CreditCard> Get(int id)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<CreditCard>(_creditCardDal.Get(p => p.Id == id), Messages.CreditCardGet);
         }
 
         public IDataResult<List<CreditCard>> GetAll()
@@ -41,7 +43,8 @@ namespace Business.Concrete
 
         public IResult Update(CreditCard creditCard)
         {
-            throw new NotImplementedException();
+            _creditCardDal.Update(creditCard);
+            return new SuccessResult(Messages.CreditCardUpdate);
         }
     }
 }

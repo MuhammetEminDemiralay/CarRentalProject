@@ -8,12 +8,58 @@ namespace Business.Constants
 {
     public static class Messages
     {
+
+       
+
         public static string BrandListed = "Markalar listelendi";
+        public static string BrandAdd = "Marka eklendi";
+        public static string BrandDelete = "Marka silindi";
+        public static string BrandGet = "Marka listelendi";
+        public static string BrandUpdate = "Marka güncellendi";
+
+
         public static string CarListed = "Arabalar listelendi";
-        public static string ColorListed = "Renkeler listelendi";
+        public static string CarAdded = "Araba eklendi";
+        public static string CarDeleted = "Araba silindi";
+        public static string CarGet = "Araba listelendi";
+        public static string CarUpdate = "Araba güncellendi";
+
+        public static string ColorListed = "Renkler listelendi";
+        public static string ColorAdd = "Renk eklendi";
+        public static string ColorDelete = "Renk silindi";
+        public static string ColorGet = "Renk listelendi";
+        public static string ColorUpdate = "Renk güncellendi";
+
         public static string CreditCardListed = "Kredi kartları listelendi";
+        public static string CreditCardAdd = "Kredi kartı eklendi";
+        public static string CreditCardDelete = "Kredi kartı silindi";
+        public static string CreditCardGet = "Kredi kartı listelendi";
+        public static string CreditCardUpdate = "Kredi kartı güncellendi";
+
+        public static string CustomerAdd = "Müşteri eklendi";
+        public static string CustomerDelete = "Müşteri silindi";
         public static string CustomerListed = "Müşteriler listelendi";
+        public static string CustomerUpdate = "Müşteri güncellendi";
+
         public static string PaymentListed = "Ödemeler listelendi";
+        public static string PaymentAdd = "Ödeme eklendi";
+        public static string PaymentDelete = "Ödeme silindi";
+        public static string PaymentGet = "Ödeme listelendi";
+        public static string PaymentUpdate = "Ödeme güncellendi";
+
         public static string RentalListed = "Kiralamalar listelendi";
+        public static string RentalAdd = "Kiralama eklendi";
+        public static string RentalGet = "Kiralama listelendi"; 
+        public static string RentalDelete = "Kiralama silindi";
+        public static string RentalUpdate = "Kiralama Güncellendi";
+
+        public static string ImageListed = "Resimler listelendi";
+        public static string ImageAdd = "Resim eklendi";
+        public static string ImageGet = "Resim listelendi";
+        public static string ImageDelete = "Resim silindi";
+        public static string ImageUpdate = "Resim güncellendi";
+
+
+
     }
 }

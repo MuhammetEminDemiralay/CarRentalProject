@@ -20,17 +20,19 @@ namespace Business.Concrete
         }
         public IResult Add(Color color)
         {
-            throw new NotImplementedException();
+            _colorDal.Add(color);
+            return new SuccessResult(Messages.ColorAdd);
         }
 
         public IResult Delete(Color color)
         {
-            throw new NotImplementedException();
+            _colorDal.Delete(color);
+            return new SuccessResult(Messages.ColorDelete);
         }
 
         public IDataResult<Color> Get(int id)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Color>(_colorDal.Get(p => p.Id == id), Messages.ColorGet);
         }
 
         public IDataResult<List<Color>> GetAll()
@@ -40,7 +42,8 @@ namespace Business.Concrete
 
         public IResult Update(Color color)
         {
-            throw new NotImplementedException();
+            _colorDal.Update(color);
+            return new SuccessResult(Messages.ColorUpdate);
         }
     }
 }
