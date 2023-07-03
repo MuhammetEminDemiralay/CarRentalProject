@@ -1,8 +1,13 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Concrete;
+using Castle.DynamicProxy;
+using Core.Utilites.Interceptors;
+using Core.Utilites.Security.JWT;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using DataAccess.Concrete.EntityFrameworkus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +46,20 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
             builder.RegisterType<EFCarImageDal>().As<ICarImageDal>().SingleInstance();
 
+            builder.RegisterType<BrandModelManager>().As<IBrandModelService>().SingleInstance();
+            builder.RegisterType<EFBrandModelDal>().As<IBrandModelDal>().SingleInstance();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+            builder.RegisterType<EFUserDal>().As<IUserDal>().SingleInstance();
+
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
+                .EnableInterfaceInterceptors(new ProxyGenerationOptions()
+                {
+                    Selector = new AspectInterceptorSelector()
+                }).SingleInstance();
 
 
 

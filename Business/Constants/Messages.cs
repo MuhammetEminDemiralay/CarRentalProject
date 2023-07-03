@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Business.Constants
         public static string CarDeleted = "Araba silindi";
         public static string CarGet = "Araba listelendi";
         public static string CarUpdate = "Araba güncellendi";
+        public static string GetByBrandCategory = "Markaya göre arabalar listelendi";
+        public static string CarDetailListed = "Araba ayrıntıları listelendi";
 
         public static string ColorListed = "Renkler listelendi";
         public static string ColorAdd = "Renk eklendi";
@@ -58,8 +61,18 @@ namespace Business.Constants
         public static string ImageGet = "Resim listelendi";
         public static string ImageDelete = "Resim silindi";
         public static string ImageUpdate = "Resim güncellendi";
+        public static string BrandHop = "Yakaladım seni İnşallah";
 
+        public static string Addİmage = "Lütfen resim ekleyiniz";
+        public static string AddedToCarImage = "Resim eklendi";
+        public static string ResimEklendi = "Resim Eklendi";
+        public static string GetİmagesByCarId = "Arabaya göre resim getirildi";
 
-
+        public static string UserRegistered = "Kullanıcı Kayıt Edildi";
+        public static string UserNotFound = "Kullanıcı bulunamadı";
+        public static string PasswordError = "Parola hatası";
+        public static string SuccessfulLogin ="Giriş başarılı";
+        public static string UserAlreadyExists = "Kullanıcı zaten var";
+        public static string AccessTokenCreated = "Token oluşturuldu";
     }
 }
