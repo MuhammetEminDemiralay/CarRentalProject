@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Aspect.Autofac;
 using Business.Constants;
 using Core.Utilites.Results;
 using DataAccess.Abstract;
@@ -19,6 +20,9 @@ namespace Business.Concrete
             _brandDal = brandDal;
         }
 
+
+
+        [SecuredOperation("asa")]
         public IResult Add(Brand brand)
         {
             _brandDal.Add(brand);
