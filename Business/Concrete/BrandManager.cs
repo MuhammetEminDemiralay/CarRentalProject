@@ -22,7 +22,7 @@ namespace Business.Concrete
 
 
 
-        [SecuredOperation("asa")]
+        //[SecuredOperation("asa")]
         public IResult Add(Brand brand)
         {
             _brandDal.Add(brand);

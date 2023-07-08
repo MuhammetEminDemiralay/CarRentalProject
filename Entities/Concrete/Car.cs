@@ -6,7 +6,7 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }      
         public int BrandId { get; set; }
-        public int CarModelId { get; set; }
+        public int BrandModelId { get; set; }
         public int ColorId { get; set; }
         public int ModelYear { get; set; }
         public int DailyPrice { get; set; }

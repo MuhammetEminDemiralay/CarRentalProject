@@ -24,10 +24,9 @@ namespace DataAccess.Concrete.EntityFramework
                              on car.BrandId equals brand.Id
                              join color in context.Colors
                              on car.ColorId equals color.Id
-                             join model in context.CarModels
-                             on car.CarModelId equals model.Id  
-                             join image in context.CarImages
-                             on car.Id equals image.CarId
+                             join model in context.BrandModels
+                             on car.BrandModelId equals model.Id  
+                          
 
 
 
@@ -36,10 +35,10 @@ namespace DataAccess.Concrete.EntityFramework
                                  Id = car.Id,
                                  ColorId = color.Id,
                                  BrandId = brand.Id,
-                                 CarModelId = model.Id,
+                                 BrandModelId = model.Id,
                                  BrandName = brand.BrandName,
                                  Model = model.Model,
-                                 BrandDescription= model.CarDescription, 
+                                 BrandDescription = model.BrandDescription, 
                                  ColorName = color.ColorName,                            
                                  DailyPrice = car.DailyPrice,
                                  Description = car.Description,

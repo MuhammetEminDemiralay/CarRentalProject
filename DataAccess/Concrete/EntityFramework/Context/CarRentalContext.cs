@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.EntityFramework.Context
     public class CarRentalContext : DbContext
     {
         public DbSet<Brand> Brands{ get; set; }
-        public DbSet<CarModel> CarModels { get; set; }
+        public DbSet<BrandModel> BrandModels { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<CreditCard> CreditCards { get; set; }

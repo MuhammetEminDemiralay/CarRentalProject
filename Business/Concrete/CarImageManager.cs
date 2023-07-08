@@ -47,12 +47,13 @@ namespace Business.Concrete
 
         public IResult Delete(CarImage carImage)
         {
-            throw new NotImplementedException();
+            _imageDal.Delete(carImage);
+            return new SuccessResult(Messages.İmageDelete);
         }
 
         public IDataResult<List<CarImage>> GetAll()
         {
-            return new SuccessDataResult<List<CarImage>>(_imageDal.GetAll(), "rESİMLER lİSTELENDİ");
+            return new SuccessDataResult<List<CarImage>>(_imageDal.GetAll(), "RESİMLER lİSTELENDİ");
         }
 
         public IDataResult<CarImage> GetImagesByCarId(int carId)

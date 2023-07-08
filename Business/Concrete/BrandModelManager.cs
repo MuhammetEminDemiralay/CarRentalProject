@@ -17,13 +17,13 @@ namespace Business.Concrete
         {
             _brandModelDal = brandModelDal;
         }
-        public IResult Add(CarModel brandModel)
+        public IResult Add(BrandModel brandModel)
         {
             _brandModelDal.Add(brandModel);
             return new SuccessResult();
         }
 
-        public IResult Delete(CarModel brandModel)
+        public IResult Delete(BrandModel brandModel)
         {
             _brandModelDal.Delete(brandModel);
             return new SuccessResult();
@@ -31,17 +31,17 @@ namespace Business.Concrete
 
      
 
-        public IDataResult<List<CarModel>> GetAll()
+        public IDataResult<List<BrandModel>> GetAll()
         {
-            return new SuccessDataResult<List<CarModel>>(_brandModelDal.GetAll());
+            return new SuccessDataResult<List<BrandModel>>(_brandModelDal.GetAll());
         }
 
-        public IDataResult<List<CarModel>> GetByBrandId(int brandId)
+        public IDataResult<List<BrandModel>> GetByBrandId(int brandId)
         {
-            return new SuccessDataResult<List<CarModel>>(_brandModelDal.GetAll(p => p.BrandId == brandId));
+            return new SuccessDataResult<List<BrandModel>>(_brandModelDal.GetAll(p => p.BrandId == brandId));
         }
 
-        public IResult Update(CarModel brandModel)
+        public IResult Update(BrandModel brandModel)
         {
             _brandModelDal.Update(brandModel);
             return new SuccessResult();

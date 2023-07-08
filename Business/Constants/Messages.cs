@@ -80,5 +80,7 @@ namespace Business.Constants
         public static string UserGet = "Kullanıcı listelend<i";
         public static string UsersListed = "Kullanıcılar listelendi";
         public static string UserAdd = "Kullanıcı eklendi";
+
+        public static string İmageDelete = "Resim silindi";
     }
 }

@@ -7,16 +7,16 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarModelController : ControllerBase
+    public class BrandModelController : ControllerBase
     {
         IBrandModelService _brandModelService;
-        public CarModelController(IBrandModelService brandModelService)
+        public BrandModelController(IBrandModelService brandModelService)
         {
             _brandModelService = brandModelService;
         }
 
-        [HttpPost("carModelAdd")]
-        public IActionResult ModelAdd(CarModel brandModel)
+        [HttpPost("brandModelAdd")]
+        public IActionResult ModelAdd(BrandModel brandModel)
         {
             var result = _brandModelService.Add(brandModel);
             if (result.Success)
@@ -39,7 +39,7 @@ namespace WebAPI.Controllers
             return BadRequest();
         }
 
-        [HttpGet("getCarModel")]
+        [HttpGet("getBrandModel")]
         public IActionResult GetCarModel(int id)
         {
             var result = _brandModelService.GetByBrandId(id);

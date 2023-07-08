@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EFBrandModelDal : EFEntityRepositoryBase<CarModel, CarRentalContext>, IBrandModelDal
+    public class EFBrandModelDal : EFEntityRepositoryBase<BrandModel, CarRentalContext>, IBrandModelDal
     {
     }
 }
