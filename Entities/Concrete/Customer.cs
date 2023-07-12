@@ -13,10 +13,6 @@ namespace Entities.Concrete
         public int UserId { get; set; }
         public string CompanyName { get; set; }
 
-        // Ziyeretçi
-        // Kullanıcı = Customer - Satın alan
-        // Kullanıcı + Satıcı = Customer - Satıcı
-        // Editör 
-        // Admin 
+     
     }
 }

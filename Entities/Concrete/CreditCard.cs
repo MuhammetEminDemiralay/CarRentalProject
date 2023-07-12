@@ -5,11 +5,11 @@ namespace Entities.Concrete
     public class CreditCard : IEntity
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; }
-        public int CardNumber { get; set; }
-        public DateTime DateMonth { get; set; }
-        public DateTime DateYear{ get; set; }
+        public int UserId { get; set; }
+        public long CardNumber { get; set; }
+        public int DateMonth { get; set; }
+        public int DateYear { get; set; }
         public string NameOnTheCard { get; set; }
-        public int Cvv { get; set; }
+        public string Cvv { get; set; }
     }
 }
