@@ -25,8 +25,8 @@ namespace DataAccess.Concrete.EntityFramework
                              join color in context.Colors
                              on car.ColorId equals color.Id
                              join model in context.BrandModels
-                             on car.BrandModelId equals model.Id  
-                          
+                             on car.BrandModelId equals model.Id
+
 
 
 
@@ -38,12 +38,13 @@ namespace DataAccess.Concrete.EntityFramework
                                  BrandModelId = model.Id,
                                  BrandName = brand.BrandName,
                                  Model = model.Model,
-                                 BrandDescription = model.BrandDescription, 
-                                 ColorName = color.ColorName,                            
+                                 BrandDescription = model.BrandDescription,
+                                 ColorName = color.ColorName,
                                  DailyPrice = car.DailyPrice,
                                  Description = car.Description,
                                  ModelYear = car.ModelYear,
-                                 ImagePath = (from img in context.CarImages where img.CarId == car.Id select img.ImagePath).ToList()
+                                 ImagePath = (from img in context.CarImages where img.CarId == car.Id select img.ImagePath).ToList(),
+                                 IsRentable = !context.Rentals.Any(r => r.CarId == car.Id) || !context.Rentals.Any(r => r.CarId == car.Id && (r.ReturnDate > DateTime.Now))
                              };
 
                 return filter == null ? result.ToList() : result.Where(filter).ToList();
