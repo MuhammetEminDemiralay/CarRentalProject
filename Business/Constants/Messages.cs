@@ -82,5 +82,6 @@ namespace Business.Constants
         public static string UserAdd = "Kullanıcı eklendi";
 
         public static string İmageDelete = "Resim silindi";
+        public static string GetİmageByCarId = "Araba ıd sine göre resimleri getirildi";
     }
 }

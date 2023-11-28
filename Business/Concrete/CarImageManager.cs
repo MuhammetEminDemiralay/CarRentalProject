@@ -23,10 +23,6 @@ namespace Business.Concrete
             _imageDal = imageDal;
         }
 
-
-
-
-
         public IResult Add(IFormFile file, CarImage carImage)
         {
             carImage.ImagePath = FileHelper.Add(file);
@@ -42,7 +38,7 @@ namespace Business.Concrete
                 carImage = new CarImage { CarId = carImage.CarId };
                 Add(file, carImage);
             }
-            return new SuccessResult();
+            return new SuccessResult("Oldu");
         }
 
         public IResult Delete(CarImage carImage)
@@ -56,9 +52,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarImage>>(_imageDal.GetAll(), "RESİMLER lİSTELENDİ");
         }
 
-        public IDataResult<CarImage> GetImagesByCarId(int carId)
+        public IDataResult<List<CarImage>> GetImagesByCarId(int carId)
         {
-            return new SuccessDataResult<CarImage>(_imageDal.Get(p => p.Id == carId), Messages.GetİmagesByCarId);
+            return new SuccessDataResult<List<CarImage>>(_imageDal.GetAll(p => p.CarId == carId), Messages.GetİmagesByCarId);
+        }
+
+        public IDataResult<CarImage> GetImageByCarId(int carId)
+        {
+            return new SuccessDataResult<CarImage>(_imageDal.Get(p => p.Id == carId), Messages.GetİmageByCarId);
         }
 
 

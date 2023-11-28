@@ -25,6 +25,8 @@ builder.Services.AddControllers();
 builder.Services.AddCors();
 
 
+
+
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
