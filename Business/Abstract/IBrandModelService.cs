@@ -11,9 +11,11 @@ namespace Business.Abstract
     public interface IBrandModelService
     {
         IDataResult<List<BrandModel>> GetAll();
-        IDataResult<List<BrandModel>> GetByBrandId(int brandId);
+        IDataResult<BrandModel> GetBrandModelById(int brandModelId);
+        IDataResult<List<BrandModel>> GetBrandModelsByBrandId(int brandId);
         IResult Add(BrandModel brandModel);
         IResult Update(BrandModel brandModel);
         IResult Delete(BrandModel brandModel);
+     
     }
 }

@@ -12,7 +12,7 @@ namespace Core.Utilites.Interceptors
     {
         public IInterceptor[] SelectInterceptors(Type type, MethodInfo method, IInterceptor[] interceptors)
         {
-            var classAttributes = type.GetCustomAttributes<MethodInterceptionBaseAttribute>
+            var classAttributes = type.GetCustomAttributes<MethodInterceptionBaseAttribute> // Bir sınıf yahut metot üzerine uygulanan attributleri almak için kullanılır.
                 (true).ToList();
             var methodAttributes = type.GetMethod(method.Name)
                 .GetCustomAttributes<MethodInterceptionBaseAttribute>(true);

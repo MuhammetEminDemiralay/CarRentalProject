@@ -15,17 +15,6 @@ namespace WebAPI.Controllers
             _brandModelService = brandModelService;
         }
 
-        [HttpPost("brandModelAdd")]
-        public IActionResult ModelAdd(BrandModel brandModel)
-        {
-            var result = _brandModelService.Add(brandModel);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-
-            return BadRequest();
-        }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
@@ -39,10 +28,34 @@ namespace WebAPI.Controllers
             return BadRequest();
         }
 
-        [HttpGet("getBrandModel")]
+        [HttpGet("getBrandModelByBrandId")]
         public IActionResult GetCarModel(int id)
         {
-            var result = _brandModelService.GetByBrandId(id);
+            var result = _brandModelService.GetBrandModelById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest();
+        }
+
+        [HttpGet("getBrandModelsByBrandId")]
+        public IActionResult GetBrandModelsByBrandId(int brandId)
+        {
+            var result = _brandModelService.GetBrandModelsByBrandId(brandId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest();
+        }
+
+        [HttpPost("brandModelAdd")]
+        public IActionResult ModelAdd(BrandModel brandModel)
+        {
+            var result = _brandModelService.Add(brandModel);
             if (result.Success)
             {
                 return Ok(result);

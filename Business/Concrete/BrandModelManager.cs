@@ -29,16 +29,19 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-     
-
         public IDataResult<List<BrandModel>> GetAll()
         {
             return new SuccessDataResult<List<BrandModel>>(_brandModelDal.GetAll());
         }
 
-        public IDataResult<List<BrandModel>> GetByBrandId(int brandId)
+        public IDataResult<BrandModel> GetBrandModelById(int brandModelId)
         {
-            return new SuccessDataResult<List<BrandModel>>(_brandModelDal.GetAll(p => p.BrandId == brandId));
+            return new SuccessDataResult<BrandModel>(_brandModelDal.Get(p => p.Id == brandModelId));
+        }
+
+        public IDataResult<List<BrandModel>> GetBrandModelsByBrandId(int brandId)
+        {
+            return new SuccessDataResult<List<BrandModel>>(_brandModelDal.GetAll(p => p.BrandId == brandId), "Get brand models by brand ıd");
         }
 
         public IResult Update(BrandModel brandModel)
