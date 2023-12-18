@@ -27,7 +27,7 @@ namespace WebAPI.Controllers
             return BadRequest();
         }
 
-        [HttpGet("getCarsByUserId")]
+        [HttpGet("getCardsByUserId")]
         public IActionResult GetCarsByUserId(int userId)
         {
             var result = _creditCardService.GetCardsByUserId(userId);
