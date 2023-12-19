@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidationRules;
+using Core.Aspect.Caching;
 using Core.Aspect.ValidationAspect;
 using Core.Utilites.Results;
 using DataAccess.Abstract;
@@ -41,6 +42,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Car>(_carDal.Get(p => p.Id == id), Messages.CarGet);
         }
 
+        [CacheAspect(5)]
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarListed);
