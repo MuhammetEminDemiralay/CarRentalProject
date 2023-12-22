@@ -83,5 +83,8 @@ namespace Business.Constants
 
         public static string İmageDelete = "Resim silindi";
         public static string GetİmageByCarId = "Araba ıd sine göre resimleri getirildi";
+        public static string EmailNotFound = "Email not found, valid enter your email";
+        public static string InvalidPassword = "Enter a valid old password";
+        public static string PasswordChanged = "Password changed";
     }
 }

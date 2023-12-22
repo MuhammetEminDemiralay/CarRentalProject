@@ -59,47 +59,6 @@ namespace Business.DependencyResolvers.Autofac
             {
                 Selector = new AspectInterceptorSelector()
             }).SingleInstance();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            var assembly2 = Assembly.GetExecutingAssembly();
-            builder.RegisterAssemblyTypes(assembly2).AsImplementedInterfaces().EnableInterfaceInterceptors(new ProxyGenerationOptions()
-            {
-                Selector = new AspectInterceptorSelector()
-            }).SingleInstance();
-
-
-
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Core.Entities.Concrete;
 using Core.Utilites.Results;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace Business.Abstract
         IResult Add(User user);
         IResult Update(User user);
         IResult Delete(User user);
-        User GetByMail(string email);
+        IDataResult<User> GetByEmail(string email);
+        IResult ChangeUserInfo(ChangeUserInfoDto userInfo);
+        IResult ChangeUserPassword(ChangeUserPasswordDto userInfo);
     }
 }
