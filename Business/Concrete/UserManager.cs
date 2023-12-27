@@ -66,11 +66,8 @@ namespace Business.Concrete
             var user = GetByEmail(userInfo.Email).Data;
             user.FirstName = userInfo.FirstName;
             user.LastName = userInfo.LastName;
-
             _userDal.Update(user);
-
-
-            return new SuccessResult();
+            return new SuccessResult(Messages.UserInfoSaved);
         }
 
         public IResult ChangeUserPassword(ChangeUserPasswordDto userInfo)

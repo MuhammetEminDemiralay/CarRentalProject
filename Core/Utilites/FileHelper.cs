@@ -10,13 +10,13 @@ namespace Core.Utilites
 {
     public class FileHelper
     {
-        static string directory = Directory.GetCurrentDirectory() + @"\wwwroot\";
-        static string path = @"Images\";
+        static string directory = Directory.GetCurrentDirectory() + @"\wwwroot\";    // Uygulamanın çalışma dizinini elde ederiz.
+        static string path = @"Images\";        // Çalışma dizinine ekleyeceğimiz  klasör.
 
         public static string Add(IFormFile file)
         {
-            string extension = Path.GetExtension(file.FileName);
-            string newFileName = Guid.NewGuid().ToString("N") + extension;
+            string extension = Path.GetExtension(file.FileName);   // dosya uzantısını aldık.
+            string newFileName = Guid.NewGuid().ToString("N") + extension;  // 32 karakterli bir dosya oluşturduk.
 
             if (!Directory.Exists(directory + path))
             {
@@ -28,8 +28,6 @@ namespace Core.Utilites
                 file.CopyTo(fileStream);
                 fileStream.Flush();
             }
-
-
             return (path + newFileName).Replace("\\", "/");
         }
 

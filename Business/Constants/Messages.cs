@@ -77,7 +77,7 @@ namespace Business.Constants
 
         public static string UserUpdate = "Kullanıcı güncellendi";
         public static string UserDelete = "Kullanıcı silindi";
-        public static string UserGet = "Kullanıcı listelend<i";
+        public static string UserGet = "Kullanıcı listelendi";
         public static string UsersListed = "Kullanıcılar listelendi";
         public static string UserAdd = "Kullanıcı eklendi";
 
@@ -86,5 +86,6 @@ namespace Business.Constants
         public static string EmailNotFound = "Email not found, valid enter your email";
         public static string InvalidPassword = "Enter a valid old password";
         public static string PasswordChanged = "Password changed";
+        public static string UserInfoSaved = "User information updated";
     }
 }

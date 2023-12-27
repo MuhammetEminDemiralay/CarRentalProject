@@ -85,10 +85,10 @@ namespace WebAPI.Controllers
             var result = _userService.ChangeUserInfo(userInfo);
             if (result.Success)
             {
-                return Ok(result.Success);
+                return Ok(result);
             }
 
-            return BadRequest();
+            return BadRequest(result);
         }
 
         [HttpPost("userchangepassword")]
@@ -97,10 +97,10 @@ namespace WebAPI.Controllers
             var result = _userService.ChangeUserPassword(userInfo);
             if (result.Success)
             {
-                return Ok(result.Success);
+                return Ok(result);
             }
 
-            return BadRequest();
+            return BadRequest(result);
         }
     }
 }

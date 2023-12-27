@@ -60,7 +60,7 @@ namespace WebAPI.Controllers
             var result = _imageService.AddCollective(files, carImage);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok();
             }
 
             return BadRequest(result);

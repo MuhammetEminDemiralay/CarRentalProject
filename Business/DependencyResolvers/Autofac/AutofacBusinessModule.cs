@@ -22,6 +22,7 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+
             builder.RegisterType<BrandManager>().As<IBrandService>().SingleInstance();
             builder.RegisterType<EFBrandDal>().As<IBrandDal>().SingleInstance();
 
@@ -59,6 +60,8 @@ namespace Business.DependencyResolvers.Autofac
             {
                 Selector = new AspectInterceptorSelector()
             }).SingleInstance();
+
         }
+
     }
 }
